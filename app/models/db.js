@@ -7,6 +7,9 @@ var connection = mysql.createPool({
   port: dbConfig.PORT,
   password: dbConfig.PASSWORD,
   database: dbConfig.DB,
+  ssl: {
+    rejectUnauthorized: true // This is often sufficient for cloud providers
+  }
 });
 
 module.exports = connection;
